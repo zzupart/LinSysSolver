@@ -1,38 +1,199 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro");
+@import url("https://fonts.googleapis.com/css?family=Iceberg");
+
+h1, h2, h3, h4, p{
+  color: #DBE7EC;
+}
+p, h3{
+  font-family: 'Anonymous Pro';
+  font-size: clamp(10px, 2vw, 20px);
+}
+p.big, h3{
+  font-size: clamp(10px, 4vw, 40px);
+  margin: 0;
+}
+.step{
+  font-size: clamp(5px, 2vw, 20px);
+}
+section{
+  min-height: 100svh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  align-items: baseline;
+}
+
+.static-background{
+  background: url(img/background.jpg);
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: opacity-anim;
+  animation-duration: 1s;
+}
+
+.title{
+  color: #DBE7EC;
+  font-family: Iceberg;
+  font-size: clamp(20px, 6vw, 65px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 2vmin;
+}
+.about{
+  background: url(img/info.png);
+  background-size: cover;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 4vmin;
+  transition: 0.5s;
+}
+.about:hover{
+  width: 3.5vw;
+  height: 3.5vw;
+  transition: 0.5s;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  animation: opacity-anim 1s;
+}
+.about-text{
+  z-index: 1;
+  width: 30vw;
+}
+
+.act-button{
+  background: linear-gradient(to left, #122D38, #1E4556);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: #1E4556; 
+  border-radius: 0.5vmax;
+  width: clamp(150px, 23vw, 300px);
+  height: clamp(25px, 5vw, 70px);
+  font-size: clamp(8px, 2vw, 45px);
+  text-align: center;
+  font-family: Anonymous Pro;
+  color: #DBE7EC;
+  transition: 0.5s;
+}
+.act-button:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: #122D38; 
+  transition: 0.5s;
+}
+.act-button:focus{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+@keyframes opacity-anim{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes big-title-anim{
+  from { transform: translateY(70%); }
+  to { transform: translateY(0%); }
+}
+@keyframes intro-anim{
+  from { 
+    transform: translateY(25%);  
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.title.big{
+  position: relative;
+  transform: translateY(70%);
+  color: #DBE7EC;
+  font-family: Iceberg;
+  font-size: clamp(40px, 10vw, 150px);
+  margin-top: 0;
+  margin-bottom: 3vmax;
+  animation-name: opacity-anim, big-title-anim;
+  animation-duration: 2s, 1s;
+  animation-delay: 0s, 3s;
+  animation-fill-mode: forwards;
+}
+
+
+.desc-wrapper{
+  top: 25%;
+  opacity: 0;
+  max-width: clamp(15ch, 50vw, 100ch);
+  text-align: center;
+  animation-name: intro-anim;
+  animation-delay: 4s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.act-button.big{
+  top: 25%;
+  opacity: 0;
+  width: clamp(150px, 30vw, 400px);
+  height: clamp(30px, 6vw, 80px);
+  font-size: clamp(10px, 1.5vw, 70px);
+  margin-top: 3vmax;
+  animation-name: intro-anim;
+  animation-delay: 4.25s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.transparent-input{
+  border: none;
+  background: transparent;
+  min-width: 2ch;
+  max-width: 10ch;
+  height: 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(8px, 1.5vw, 20px);
+  -webkit-text-fill-color: aliceblue;
+  padding: 0;
+  text-align: end;
+}
+.transparent-input::placeholder{
+  -webkit-text-fill-color: rgb(131, 131, 131);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error-message{
+  color: #ce4949;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.three-canvas{
+  margin: 5vmin;
+  margin-right: 0;
 }
