@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/LinSysSolver/static/css/main.9b91063f.css",
-    "main.js": "/LinSysSolver/static/js/main.7a872114.js",
+    "main.css": "/LinSysSolver/static/css/main.78881a0e.css",
+    "main.js": "/LinSysSolver/static/js/main.86cb255b.js",
     "static/js/787.f655207c.chunk.js": "/LinSysSolver/static/js/787.f655207c.chunk.js",
     "static/media/background.jpg": "/LinSysSolver/static/media/background.8d34f2476856adf1ffcc.jpg",
     "static/media/info.png": "/LinSysSolver/static/media/info.35e48447750919113351.png",
     "index.html": "/LinSysSolver/index.html",
-    "main.9b91063f.css.map": "/LinSysSolver/static/css/main.9b91063f.css.map",
-    "main.7a872114.js.map": "/LinSysSolver/static/js/main.7a872114.js.map",
+    "main.78881a0e.css.map": "/LinSysSolver/static/css/main.78881a0e.css.map",
+    "main.86cb255b.js.map": "/LinSysSolver/static/js/main.86cb255b.js.map",
     "787.f655207c.chunk.js.map": "/LinSysSolver/static/js/787.f655207c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b91063f.css",
-    "static/js/main.7a872114.js"
+    "static/css/main.78881a0e.css",
+    "static/js/main.86cb255b.js"
   ]
 }
